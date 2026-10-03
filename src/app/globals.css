@@ -303,6 +303,16 @@ a {
   color: rgba(13, 27, 42, 0.52);
 }
 
+.page-hero-grid {
+  background-image:
+    linear-gradient(rgba(13, 27, 42, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 27, 42, 0.028) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.page-glow { background: radial-gradient(ellipse at 60% 45%, rgba(201,169,104,.2), transparent 65%); }
+.technical-grid-dark { background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 48px 48px; }
+.evidence-frame::before { content: ""; position: absolute; inset: -9px 9px 9px -9px; border: 1px solid rgba(13,27,42,.08); pointer-events: none; }
+
 .nav-link { position: relative; }
 .nav-link::after {
   content: "";
