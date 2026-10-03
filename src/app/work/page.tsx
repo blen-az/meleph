@@ -1,0 +1,11 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = { title: "Work", description: "Client work, Meleph products and clearly labelled demonstrations." };
+const projects = [
+  { type: "Demonstration", title: "Real Estate AI Customer Agent", text: "An illustrative workflow showing property enquiries, captured requirements and a contextual handoff to an agent.", href: null },
+  { type: "Demonstration", title: "Aviation Enquiry System", text: "An illustrative workflow showing route questions, enquiry context and a structured next action for the team.", href: null },
+  { type: "Meleph Product", title: "LeKiray", text: "A digital product developed and operated by Meleph.", href: "/products/lekiray" },
+] as const;
+
+export default function WorkPage() { return <><section className="border-b border-ink/10 py-24 md:py-32"><div className="container-site"><p className="eyebrow">Work</p><h1 className="mt-7 max-w-5xl font-serif text-[clamp(3.5rem,7vw,7rem)] leading-[.92] tracking-[-.045em] text-ink">Systems and products made tangible.</h1><p className="mt-8 max-w-2xl text-base leading-8 text-ink/58">This collection separates client work, Meleph-owned products and demonstrations. Demonstrations show what a system could do; they are not presented as deployed client projects.</p></div></section><section className="container-site py-20"><div className="grid md:grid-cols-3">{projects.map((project, index) => { const content = <><span className="text-[.52rem] uppercase tracking-[.18em] text-gold">{project.type}</span><span className="mt-20 font-mono text-[.5rem] text-ink/30">0{index + 1}</span><h2 className="mt-5 font-serif text-3xl leading-tight text-ink">{project.title}</h2><p className="mt-5 text-xs leading-6 text-ink/52">{project.text}</p></>; return project.href ? <Link key={project.title} href={project.href} className="flex min-h-[28rem] flex-col border-b border-r border-ink/12 p-7">{content}</Link> : <article key={project.title} className="flex min-h-[28rem] flex-col border-b border-r border-ink/12 p-7">{content}</article>; })}</div><div className="mt-20 border-t border-ink/12 pt-8"><p className="eyebrow">Client work</p><p className="mt-5 max-w-xl text-sm leading-7 text-ink/52">Client work will appear here when it can be shared accurately and with permission.</p></div></section></>; }

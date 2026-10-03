@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = { title: "LeKiray", description: "LeKiray is a digital product developed and operated by Meleph." };
+
+export default function LeKirayPage() { return <><section className="bg-ink py-24 text-ivory md:py-36"><div className="container-site"><p className="text-[.6rem] uppercase tracking-[.22em] text-gold">Meleph product</p><h1 className="mt-8 font-serif text-[clamp(5rem,14vw,13rem)] leading-[.75] tracking-[-.06em]">LeKiray</h1><p className="mt-16 max-w-xl text-base leading-8 text-white/52">A Meleph-owned digital product developed and operated independently from our client-facing AI Customer Agent solution.</p></div></section><section className="py-24"><div className="container-site grid gap-12 lg:grid-cols-2"><h2 className="font-serif text-5xl text-ink">A focused product, built around a real need.</h2><div><p className="text-sm leading-7 text-ink/55">More product information will be published as LeKiray develops. We do not present future capabilities or performance as established results.</p><Link href="/get-started?path=product" className="mt-8 inline-flex border border-ink/20 px-6 py-4 text-sm text-ink">Discuss digital product development →</Link></div></div></section></>; }

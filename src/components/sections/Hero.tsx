@@ -35,7 +35,7 @@ export function Hero() {
               Explore Our Work
               <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
             </Link>
-            <Link href="/contact" className="link-underline py-2 text-sm font-medium text-ink">
+            <Link href="/get-started" className="link-underline py-2 text-sm font-medium text-ink">
               Talk to Us
             </Link>
           </div>
@@ -55,9 +55,9 @@ export function Hero() {
       </div>
 
       <div className="relative border-t border-ink/10 bg-ink text-ivory">
-        <div className="container-site grid min-h-20 items-center gap-5 py-5 md:grid-cols-[1.2fr_1fr_1fr_1fr] md:py-0">
+        <div className="container-site grid items-center gap-5 py-6 md:grid-cols-[1.2fr_repeat(3,1fr)] xl:grid-cols-[1.2fr_repeat(6,1fr)]">
           <p className="font-serif text-xl tracking-[-0.02em] text-ivory/90">One continuous intelligence layer.</p>
-          {[["01", "Listen", "Every conversation"], ["02", "Understand", "Intent + context"], ["03", "Act", "The next best step"]].map(([number, title, detail]) => (
+          {[["01", "Understand", "Intent + context"], ["02", "Answer", "Useful responses"], ["03", "Capture", "Details that matter"], ["04", "Act", "The next step"], ["05", "Connect", "Systems + people"], ["06", "Follow up", "Keep momentum"]].map(([number, title, detail]) => (
             <div key={number} className="flex items-center gap-4 border-l border-white/12 pl-5"><span className="font-mono text-[0.5rem] text-gold">{number}</span><div><p className="text-[0.66rem] font-medium">{title}</p><p className="text-[0.5rem] text-white/38">{detail}</p></div></div>
           ))}
         </div>

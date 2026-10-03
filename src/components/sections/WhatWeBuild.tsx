@@ -35,7 +35,7 @@ export function WhatWeBuild() {
 
 function OfferingVisual({ index }: { index: number }) {
   if (index === 0) {
-    return <div className="system-visual mt-10 border border-ink/12 bg-white/35 p-5"><div className="flex items-center justify-between text-[0.5rem] uppercase tracking-[0.15em] text-ink/38"><span>Customer signal</span><span>Team action</span></div><div className="mt-6 flex items-center"><Node label="Conversation" active /><Line /><Node label="Intent" /><Line /><Node label="Handoff" /></div><div className="mt-6 grid grid-cols-3 border-t border-ink/10 pt-4 text-center"><Metric value="2.4s" label="Response" /><Metric value="94%" label="Captured" /><Metric value="Live" label="Synced" /></div></div>;
+    return <div className="system-visual mt-10 border border-ink/12 bg-white/35 p-5"><div className="flex items-center justify-between text-[0.5rem] uppercase tracking-[0.15em] text-ink/38"><span>Customer signal</span><span>Team action</span></div><div className="mt-6 flex items-center"><Node label="Conversation" active /><Line /><Node label="Intent" /><Line /><Node label="Handoff" /></div><div className="mt-6 grid grid-cols-3 border-t border-ink/10 pt-4 text-center"><Metric value="Live" label="Conversation" /><Metric value="Clear" label="Context" /><Metric value="Ready" label="Handoff" /></div></div>;
   }
 
   if (index === 1) {

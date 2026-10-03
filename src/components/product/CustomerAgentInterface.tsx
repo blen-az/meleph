@@ -44,7 +44,7 @@ export function CustomerAgentInterface() {
                 <Detail label="Assigned" value="Maya · Enterprise" />
               </dl>
               <div className="mt-5 border-l-2 border-gold bg-gold/10 p-3"><p className="text-[0.46rem] uppercase tracking-wider text-ink/45">Next action</p><p className="mt-1 text-[0.59rem] font-semibold text-ink">Schedule consultation</p><p className="mt-1 text-[0.48rem] text-ink/45">Thu, 10 Oct · 14:30</p></div>
-              <div className="mt-4 flex justify-between border-t border-ink/10 pt-3 text-[0.46rem] uppercase tracking-wider text-ink/35"><span>CRM synced</span><span>98% confidence</span></div>
+              <div className="mt-4 flex justify-between border-t border-ink/10 pt-3 text-[0.46rem] uppercase tracking-wider text-ink/35"><span>System connected</span><span>Context captured</span></div>
             </aside>
           </div>
         </div>

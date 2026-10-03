@@ -295,6 +295,14 @@ a {
 
 .link-underline:hover { background-size: 100% 1px; }
 
+.eyebrow {
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(13, 27, 42, 0.52);
+}
+
 .nav-link { position: relative; }
 .nav-link::after {
   content: "";

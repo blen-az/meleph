@@ -1,8 +1,8 @@
 // ─── Navigation ──────────────────────────────────────────────
 export const NAV_LINKS = [
-  { label: "Solutions", href: "/services" },
-  { label: "Products", href: "/#what-we-build" },
-  { label: "Work", href: "/#what-we-build" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Products", href: "/products" },
+  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
 ] as const;
 
@@ -14,8 +14,6 @@ export const COMPANY = {
     "We design and engineer intelligent systems that transform how businesses operate — from custom AI solutions to polished digital products that scale.",
   email: "hello@meleph.com",
   phone: "+1 (555) 000-1234",
-  address: "San Francisco, CA",
-  founded: "2024",
 } as const;
 
 // ─── Services ────────────────────────────────────────────────
