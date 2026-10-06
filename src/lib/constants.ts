@@ -11,7 +11,7 @@ export const COMPANY = {
   name: "Meleph",
   tagline: "AI Systems & Digital Products",
   description:
-    "We design and engineer intelligent systems that transform how businesses operate — from custom AI solutions to polished digital products that scale.",
+    "We design and engineer intelligent systems that transform how businesses operate.",
   email: "hello@meleph.com",
   phone: "+1 (555) 000-1234",
 } as const;

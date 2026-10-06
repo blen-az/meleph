@@ -23,11 +23,11 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: "Meleph — AI Systems & Digital Products",
+    default: "Meleph | AI Systems & Digital Products",
     template: "%s | Meleph",
   },
   description:
-    "We design and engineer intelligent systems that transform how businesses operate — from custom AI solutions to polished digital products that scale.",
+    "We design and engineer intelligent systems that transform how businesses operate.",
   keywords: [
     "AI consulting",
     "machine learning",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Meleph",
-    title: "Meleph — AI Systems & Digital Products",
+    title: "Meleph | AI Systems & Digital Products",
     description:
       "We design and engineer intelligent systems that transform how businesses operate.",
   },
