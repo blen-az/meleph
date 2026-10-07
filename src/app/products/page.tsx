@@ -1,6 +1,139 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "Products", description: "Digital products developed and operated by Meleph." };
+export const metadata: Metadata = {
+  title: "Products | Digital Products Built by Meleph",
+  description:
+    "Alongside client systems, Meleph develops and operates its own digital products, starting with LeKiray.",
+};
 
-export default function ProductsPage() { return <><section className="page-hero-grid relative overflow-hidden border-b border-ink/10 py-24 md:py-32"><div className="page-glow absolute inset-y-0 right-0 w-1/2" /><div className="container-site relative grid gap-10 lg:grid-cols-[1fr_.55fr] lg:items-end"><div><p className="eyebrow">Products</p><h1 className="mt-7 max-w-5xl font-serif text-[clamp(3.5rem,7vw,7rem)] leading-[.9] tracking-[-.045em] text-ink">Digital products built to solve real problems.</h1></div><p className="border-l border-gold/50 pl-6 text-sm leading-7 text-ink/55">Alongside client solutions, Meleph develops and operates its own focused digital products.</p></div></section><section className="py-20 md:py-28"><div className="container-site"><Link href="/products/lekiray" className="group grid min-h-[40rem] overflow-hidden border border-ink/15 bg-ink text-ivory shadow-[0_28px_80px_rgba(13,27,42,.16)] lg:grid-cols-[.82fr_1.18fr]"><div className="flex flex-col p-8 md:p-14"><div className="flex items-center justify-between"><span className="text-[.55rem] uppercase tracking-[.2em] text-gold">Meleph product 01</span><span className="font-mono text-[.48rem] text-white/25">LKR / 01</span></div><h2 className="mt-20 font-serif text-8xl tracking-[-.055em]">LeKiray</h2><p className="mt-6 max-w-xl text-sm leading-7 text-white/48">A Meleph-owned digital product developed around a specific real-world need, separate from the AI Customer Agent solution.</p><span className="mt-auto pt-14 transition-transform group-hover:translate-x-1">View product →</span></div><div className="relative overflow-hidden border-l border-white/10 bg-[#101f2d]"><div className="technical-grid-dark absolute inset-0 opacity-40" /><div className="absolute -right-16 top-12 size-72 rounded-full border border-gold/20" /><div className="absolute -right-3 top-24 size-44 rounded-full border border-gold/30" /><div className="absolute inset-10 border border-white/10 p-6"><span className="text-[.48rem] uppercase tracking-[.16em] text-white/30">Product system / focused utility</span><div className="absolute bottom-8 left-8 right-8"><div className="flex gap-2">{["Discover", "Shape", "Use"].map((item, i) => <div key={item} className="flex-1 border-t border-white/15 pt-3"><span className="font-mono text-[.45rem] text-gold">0{i+1}</span><p className="mt-2 text-[.55rem] text-white/55">{item}</p></div>)}</div></div><span className="absolute right-7 top-1/2 -translate-y-1/2 font-serif text-[9rem] text-gold/80">L</span></div></div></Link></div></section></>; }
+const LEKIRAY_URL = "https://le-kiray.vercel.app/";
+
+export default function ProductsPage() {
+  return (
+    <div className="bg-[#FAF8F3] text-ink selection:bg-[#E8E1D6]">
+      {/* ─── Hero ─────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden border-b border-ink/8 py-20 md:py-28">
+        <div className="home-container">
+          <div className="max-w-3xl">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold">OUR PRODUCTS</p>
+            <h1 className="mt-4 font-serif text-[clamp(2.8rem,6vw,5.5rem)] font-normal leading-[0.98] tracking-[-0.04em] text-ink">
+              Digital products built to solve real problems.
+            </h1>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/65 md:text-lg">
+              Alongside client systems, Meleph develops and operates its own digital products. We
+              focus on fragmented industries where structured software creates immediate efficiency.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Product Card: LeKiray ─────────────────────────────────── */}
+      <section className="py-20 md:py-28">
+        <div className="home-container">
+          <div className="overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-xl transition-all hover:shadow-2xl">
+            <div className="grid lg:grid-cols-12">
+              {/* Left Column: Product Definition */}
+              <div className="flex flex-col justify-between p-8 sm:p-14 lg:col-span-6">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-semibold uppercase tracking-wider text-gold">
+                      PRODUCT 01
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-800">
+                      <span className="size-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                      Live in Production
+                    </span>
+                  </div>
+
+                  <h2 className="mt-6 font-serif text-5xl font-semibold tracking-tight text-ink md:text-6xl">
+                    LeKiray
+                  </h2>
+
+                  <p className="mt-4 text-sm font-medium text-ink/70">
+                    Find what you need. Rent it without the unnecessary search.
+                  </p>
+
+                  <p className="mt-3 text-sm leading-relaxed text-ink/60">
+                    A digital marketplace connecting people and businesses with vehicles, machinery
+                    and industrial equipment available for rent.
+                  </p>
+
+                  {/* Capabilities / Categories */}
+                  <div className="mt-8 space-y-2.5">
+                    <div className="flex items-center gap-2 text-xs text-ink/75">
+                      <span className="text-gold font-bold">✓</span>
+                      <span>Heavy Excavators, Wheel Loaders &amp; Compaction</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-ink/75">
+                      <span className="text-gold font-bold">✓</span>
+                      <span>Mobile Cranes &amp; Commercial Tipper Fleets</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-ink/75">
+                      <span className="text-gold font-bold">✓</span>
+                      <span>Direct Provider Inquiries &amp; Operator Inclusion Terms</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-12 flex flex-wrap items-center gap-4">
+                  <a
+                    href={LEKIRAY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-[#FAF8F3] hover:bg-ink/90 transition-transform hover:-translate-y-0.5"
+                  >
+                    <span>Launch le-kiray.vercel.app</span>
+                    <span className="ml-1.5 inline-block transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      ↗
+                    </span>
+                  </a>
+
+                  <Link
+                    href="/products/lekiray"
+                    className="rounded-full border border-ink/15 bg-white px-5 py-3.5 text-sm font-semibold text-ink hover:border-ink/30 transition-colors"
+                  >
+                    Explore Product Overview →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column: High-Impact Visual Frame */}
+              <div className="relative min-h-[380px] overflow-hidden bg-ink p-8 sm:p-12 lg:col-span-6 flex flex-col justify-between text-white">
+                <div className="flex items-center justify-between font-mono text-xs text-white/40">
+                  <span>UNIFIED HEAVY MARKETPLACE</span>
+                  <a
+                    href={LEKIRAY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-400 hover:text-emerald-300 transition-colors"
+                  >
+                    le-kiray.vercel.app ↗
+                  </a>
+                </div>
+
+                <div className="my-auto text-center py-8">
+                  <span className="font-serif text-[12rem] font-bold leading-none text-white/5 select-none block">
+                    L
+                  </span>
+                  <p className="-mt-20 font-serif text-3xl font-semibold text-gold">
+                    Heavy Machinery &amp; Vehicle Rentals
+                  </p>
+                  <p className="mt-2 text-xs text-white/50 max-w-sm mx-auto">
+                    Search by category, review technical specs, and connect directly with verified
+                    plant owners.
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-between border-t border-white/10 pt-4 text-xs text-white/50">
+                  <span>Operated by Meleph</span>
+                  <span>Independent Product Line</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

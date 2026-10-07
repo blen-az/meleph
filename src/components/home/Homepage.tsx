@@ -592,6 +592,15 @@ export function Homepage() {
                 >
                   Discover LeKiray <span>→</span>
                 </Link>
+                <a
+                  href="https://le-kiray.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-ink/20 bg-white/70 px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-white inline-flex items-center gap-1.5"
+                >
+                  <span>Launch Live App</span>
+                  <span className="text-xs text-ink/50">↗</span>
+                </a>
                 <Link
                   href="/products"
                   className="rounded-full border border-ink/15 bg-white/60 px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-white"
