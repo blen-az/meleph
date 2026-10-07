@@ -1,0 +1,42 @@
+/* Meleph Voiceflow Chat Widget Custom Styling */
+
+/* Hide the default "Test your agent" label on the launcher button */
+.vfrc-launcher__label,
+.vfrc-launcher-text,
+[class*="launcher__label"],
+[class*="launcher-text"] {
+  display: none !important;
+}
+
+/* Ensure circular launcher button conforms to AGENTS.md specs */
+.vfrc-launcher,
+[class*="vfrc-launcher"] {
+  background-color: #0D1B2A !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 10px 25px -5px rgba(13, 27, 42, 0.25), 0 8px 10px -6px rgba(13, 27, 42, 0.2) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease !important;
+}
+
+.vfrc-launcher:hover,
+[class*="vfrc-launcher"]:hover {
+  transform: scale(1.05) !important;
+}
+
+/* Chat header and brand accents */
+.vfrc-header {
+  background-color: #0D1B2A !important;
+  color: #FAF8F3 !important;
+}
+
+/* User message bubble */
+.vfrc-message--user .vfrc-bubble {
+  background-color: #0D1B2A !important;
+  color: #FAF8F3 !important;
+}
+
+/* Assistant message bubble */
+.vfrc-message--assistant .vfrc-bubble {
+  background-color: #F4F0E8 !important;
+  color: #0D1B2A !important;
+  border: 1px solid rgba(13, 27, 42, 0.08) !important;
+}
