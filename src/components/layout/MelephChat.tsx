@@ -15,12 +15,6 @@ const GREETING: Msg = {
   content: "Hi there 👋\n\nYou're now speaking with Mel. How can I help?",
 };
 
-const SUGGESTIONS = [
-  "What does the AI Customer Agent do?",
-  "I need a custom AI system",
-  "Request a demo",
-];
-
 /** Open the Meleph chat panel from any component. */
 export function openChat() {
   if (typeof window !== "undefined") {
@@ -109,8 +103,6 @@ export function MelephChat() {
     [messages, loading, lead],
   );
 
-  const showSuggestions = messages.length === 1;
-
   return (
     <>
       {open && (
@@ -168,19 +160,6 @@ export function MelephChat() {
               </div>
             )}
 
-            {showSuggestions && (
-              <div className="flex flex-wrap gap-2 pt-1">
-                {SUGGESTIONS.map((s) => (
-                  <button
-                    key={s}
-                    onClick={() => send(s)}
-                    className="rounded-full border border-[#0D1B2A]/20 px-3.5 py-1.5 text-xs text-[#0D1B2A] transition hover:border-[#0D1B2A] hover:bg-[#0D1B2A] hover:text-[#FAF8F3]"
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-            )}
           </div>
 
           <form
