@@ -7,7 +7,76 @@ const solutions = [
   { number: "02", title: "Custom AI Systems", href: "/solutions/custom-ai-systems", text: "Purpose-built internal systems for workflows, knowledge, operations, portals and the connections between existing tools.", kind: "system" },
 ] as const;
 
-export default function SolutionsPage() { return <><section className="page-hero-grid relative overflow-hidden border-b border-ink/10 py-24 md:py-32"><div className="page-glow absolute inset-y-0 right-0 w-1/2" /><div className="container-site relative grid gap-10 lg:grid-cols-[1fr_.55fr] lg:items-end"><div><p className="eyebrow">Solutions</p><h1 className="mt-7 max-w-5xl font-serif text-[clamp(3.5rem,7vw,7rem)] leading-[.9] tracking-[-.045em] text-ink">Systems built around how the business needs to work.</h1></div><p className="border-l border-gold/50 pl-6 text-sm leading-7 text-ink/55">Two solution families, each shaped around a real process rather than a generic technology package.</p></div></section><section className="container-site space-y-8 py-20 md:py-28">{solutions.map((item) => <Link key={item.href} href={item.href} className="group grid min-h-[32rem] overflow-hidden border border-ink/12 transition-shadow hover:shadow-[0_25px_70px_rgba(13,27,42,.12)] lg:grid-cols-[.78fr_1.22fr]"><div className="flex flex-col p-8 md:p-12"><span className="font-mono text-[.55rem] text-gold">{item.number} / 02</span><h2 className="mt-20 font-serif text-5xl tracking-[-.03em] text-ink">{item.title}</h2><p className="mt-6 max-w-lg text-sm leading-7 text-ink/55">{item.text}</p><span className="mt-auto pt-12 text-sm transition-transform group-hover:translate-x-1">Explore solution →</span></div><SolutionCanvas kind={item.kind} /></Link>)}</section></>; }
+export default function SolutionsPage() {
+  return (
+    <>
+      <section className="page-hero-grid relative overflow-hidden border-b border-ink/10 pb-20 pt-6 md:pb-28 md:pt-8">
+        <div className="page-glow absolute inset-y-0 right-0 w-1/2" />
+        <div className="container-site relative">
+          <div className="max-w-4xl text-left">
+            <p className="eyebrow">SOLUTIONS</p>
+            <h1 className="mt-7 max-w-5xl font-serif text-[clamp(3.5rem,7vw,7rem)] leading-[.9] tracking-[-.045em] text-ink">
+              Systems built around how the business needs to work.
+            </h1>
+            <p className="mt-7 max-w-2xl text-base leading-relaxed text-ink/65 md:text-xl">
+              From customer-facing AI to custom operational systems, we design technology around
+              the problem, workflow and people it needs to support.
+            </p>
+
+            {/* CTAs */}
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <Link
+                href="/solutions/ai-customer-agent"
+                className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-[#FAF8F3] shadow-md transition-all hover:-translate-y-0.5 hover:bg-ink/90 hover:shadow-lg"
+              >
+                <span>Explore AI Customer Agent</span>
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+
+              <Link
+                href="/solutions/custom-ai-systems"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-6 py-4 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-white"
+              >
+                <span>Explore Custom AI Systems</span>
+              </Link>
+            </div>
+
+            {/* Micro-trust proof row */}
+            <p className="mt-4 flex flex-wrap items-center gap-x-2 text-xs text-ink/50">
+              <span>Engineered around your process</span>
+              <span>·</span>
+              <span>No chatbot templates</span>
+              <span>·</span>
+              <span>Contextual team handoffs</span>
+              <span>·</span>
+              <span>Scalable integrations</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-site space-y-8 py-20 md:py-28">
+        {solutions.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="group grid min-h-[32rem] overflow-hidden border border-ink/12 transition-shadow hover:shadow-[0_25px_70px_rgba(13,27,42,.12)] lg:grid-cols-[.78fr_1.22fr]"
+          >
+            <div className="flex flex-col p-8 md:p-12">
+              <span className="font-mono text-[.55rem] text-gold">{item.number} / 02</span>
+              <h2 className="mt-20 font-serif text-5xl tracking-[-.03em] text-ink">{item.title}</h2>
+              <p className="mt-6 max-w-lg text-sm leading-7 text-ink/55">{item.text}</p>
+              <span className="mt-auto pt-12 text-sm transition-transform group-hover:translate-x-1">
+                Explore solution →
+              </span>
+            </div>
+            <SolutionCanvas kind={item.kind} />
+          </Link>
+        ))}
+      </section>
+    </>
+  );
+}
 
 function SolutionCanvas({ kind }: { kind: "conversation" | "system" }) {
   if (kind === "conversation") return <div className="relative overflow-hidden bg-brand-stone/50 p-8"><div className="page-hero-grid absolute inset-0 opacity-50" /><div className="relative mx-auto mt-8 max-w-lg border border-ink/15 bg-ivory p-5 shadow-[0_25px_55px_rgba(13,27,42,.14)]"><div className="flex justify-between border-b border-ink/10 pb-4 text-[.48rem] uppercase tracking-wider text-ink/35"><span>Customer conversation</span><span className="text-[#568066]">Active</span></div><div className="mt-5 max-w-[78%] border border-ink/10 bg-white p-3 text-[.54rem] leading-5 text-ink/55">Can you help me understand which option would suit our team?</div><div className="ml-auto mt-3 max-w-[82%] bg-ink p-3 text-[.54rem] leading-5 text-white/70">Of course. I can capture a few details and connect you with the right person.</div><div className="mt-6 grid grid-cols-3 gap-2">{["Intent", "Context", "Next step"].map((label, i) => <div key={label} className="border border-ink/10 bg-white p-3"><p className="text-[.42rem] uppercase tracking-wider text-ink/30">{label}</p><p className="mt-4 font-serif text-lg text-ink">{["Clear", "Captured", "Ready"][i]}</p></div>)}</div></div></div>;

@@ -107,11 +107,11 @@ export function LeKirayPage() {
   return (
     <div className="bg-[#FAF8F3] text-ink selection:bg-[#E8E1D6]">
       {/* ─── 1. Editorial Hero ───────────────────────────────────── */}
-      <section className="relative overflow-hidden border-b border-ink/8 pb-20 pt-16 md:pb-28 md:pt-24">
+      <section className="relative overflow-hidden border-b border-ink/8 pb-20 pt-6 md:pb-28 md:pt-8">
         <div className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-b from-[#FAF4E6] to-transparent opacity-70 blur-3xl" />
 
         <div className="home-container relative">
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="max-w-4xl text-left">
             {/* Live External App Pill */}
             <div className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/80 px-4 py-1.5 shadow-xs backdrop-blur-sm">
               <span className="relative flex size-2">
@@ -142,18 +142,18 @@ export function LeKirayPage() {
             </h1>
 
             {/* Approved Support Copy from AGENTS.md Section 10.2 */}
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-ink/65 md:text-xl">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink/65 md:text-xl">
               LeKiray connects customers looking for vehicles, machinery and industrial equipment
               with providers offering them for rent.
             </p>
 
-            {/* CTAs */}
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            {/* CTAs - Exactly 2 cleanly aligned buttons */}
+            <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 href={LEKIRAY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-[#FAF8F3] shadow-md transition-all hover:-translate-y-0.5 hover:bg-ink/90 hover:shadow-lg"
+                className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-[#FAF8F3] shadow-md transition-all hover:-translate-y-0.5 hover:bg-ink/90 hover:shadow-lg whitespace-nowrap"
               >
                 <span>Browse Live Listings</span>
                 <span className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
@@ -165,23 +165,34 @@ export function LeKirayPage() {
                 href={`${LEKIRAY_URL}#list-equipment`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-6 py-4 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-white"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-6 py-4 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-white whitespace-nowrap"
               >
                 <span>List Your Equipment</span>
                 <span className="text-xs text-ink/40">↗</span>
               </a>
-
-              <Link
-                href="/contact?interest=lekiray-enterprise"
-                className="inline-flex items-center gap-1.5 rounded-full border border-transparent px-5 py-4 text-sm font-semibold text-ink/65 hover:text-ink transition-colors"
-              >
-                <span>Enterprise Fleet Inquiries</span>
-                <span>→</span>
-              </Link>
             </div>
 
+            {/* Micro-trust proof row directly below CTAs */}
+            <p className="mt-4 flex flex-wrap items-center gap-x-2 text-xs text-ink/50">
+              <Link
+                href="/contact?interest=lekiray-enterprise"
+                className="font-medium text-ink/75 hover:text-ink transition-colors inline-flex items-center gap-1"
+              >
+                <span>Enterprise fleet inquiries</span>
+                <span>→</span>
+              </Link>
+              <span>·</span>
+              <span>Verified asset owners</span>
+              <span>·</span>
+              <span>Direct rental agreements</span>
+              <span>·</span>
+              <span>Heavy machinery &amp; vehicles</span>
+              <span>·</span>
+              <span>Independent Meleph product</span>
+            </p>
+
             {/* Critical Product Separation Notice as specified in AGENTS.md */}
-            <div className="mx-auto mt-12 max-w-xl rounded-2xl border border-ink/8 bg-white/60 p-4 text-center text-xs leading-relaxed text-ink/55 backdrop-blur-xs">
+            <div className="mt-8 max-w-xl rounded-2xl border border-ink/8 bg-white/60 p-4 text-left text-xs leading-relaxed text-ink/55 backdrop-blur-xs">
               <span className="font-semibold text-ink">Product Separation:</span> LeKiray is a
               Meleph-owned and operated digital product. It functions independently from our
               client-facing AI Customer Agent system, demonstrating how Meleph builds high-utility

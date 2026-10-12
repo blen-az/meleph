@@ -64,62 +64,65 @@ export function Homepage() {
   return (
     <>
       {/* ─── 6.1 Hero Section ───────────────────────────────────── */}
-      <section className="home-hero relative overflow-hidden border-b border-ink/8 pb-20 pt-14 md:pb-32 md:pt-20">
+      <section className="home-hero relative overflow-hidden border-b border-ink/8 pb-20 pt-6 md:pb-28 md:pt-8">
         <div className="home-container">
-          <div className="grid items-center gap-12 lg:grid-cols-12 xl:gap-16">
-            {/* Left Hero Content */}
-            <div className="lg:col-span-5">
-              <div className="home-reveal flex items-center gap-2">
-                <span className="size-2 rounded-full bg-gold" />
-                <p className="home-eyebrow text-ink/60">
-                  AI Systems &amp; Digital Products
-                </p>
-              </div>
-
-              <h1 className="home-reveal home-delay-1 mt-6 font-serif text-[clamp(3.1rem,5.6vw,5.8rem)] font-normal leading-[0.96] tracking-[-0.04em] text-ink">
-                Give your business a system that listens, understands and acts.
-              </h1>
-
-              <p className="home-reveal home-delay-2 mt-7 max-w-xl text-base leading-relaxed text-ink/65 md:text-lg">
-                Meleph builds AI systems and digital products that help businesses understand customer needs, capture opportunities, connect teams and move every interaction toward the right next step.
+          {/* Top Hero Content */}
+          <div className="max-w-4xl text-left">
+            <div className="home-reveal flex items-center gap-2">
+              <span className="size-2 rounded-full bg-gold" />
+              <p className="home-eyebrow text-ink/60">
+                AI Systems &amp; Digital Products
               </p>
-
-              {/* CTAs */}
-              <div className="home-reveal home-delay-3 mt-9 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/solutions/ai-customer-agent"
-                  className="rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-ivory transition-transform hover:-translate-y-0.5"
-                >
-                  Explore the AI Customer Agent <span className="ml-1">→</span>
-                </Link>
-
-                <Link
-                  href="/get-started"
-                  className="rounded-full border border-ink/15 bg-white/70 px-5 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-white"
-                >
-                  Talk to us
-                </Link>
-
-                {/* Direct Live Agent Launcher Pill */}
-                <button
-                  type="button"
-                  onClick={openChat}
-                  className="group flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50/80 px-4 py-2.5 text-xs font-semibold text-emerald-900 transition-all hover:bg-emerald-100"
-                >
-                  <span className="relative flex size-2">
-                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex size-2 rounded-full bg-emerald-600" />
-                  </span>
-                  <span>Try Mel Live</span>
-                  <span className="text-emerald-700 transition-transform group-hover:translate-x-0.5">↗</span>
-                </button>
-              </div>
             </div>
 
-            {/* Right Hero Product Surface (Intercom-Caliber Interactive System) */}
-            <div className="home-reveal home-delay-2 lg:col-span-7">
-              <CustomerAgentSurface />
+            <h1 className="home-reveal home-delay-1 mt-6 font-serif text-[clamp(3.1rem,6vw,5.8rem)] font-normal leading-[0.96] tracking-[-0.04em] text-ink">
+              Give your business a system that listens, understands and acts.
+            </h1>
+
+            <p className="home-reveal home-delay-2 mt-7 max-w-2xl text-base leading-relaxed text-ink/65 md:text-xl">
+              Meleph builds AI systems and digital products that help businesses understand customer needs, capture opportunities, connect teams and move every interaction toward the right next step.
+            </p>
+
+            {/* CTAs - Exactly 2 cleanly aligned buttons */}
+            <div className="home-reveal home-delay-3 mt-9 flex flex-wrap items-center gap-3">
+              <Link
+                href="/solutions/ai-customer-agent"
+                className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-ivory shadow-md transition-all hover:-translate-y-0.5 hover:bg-ink/90 hover:shadow-lg whitespace-nowrap"
+              >
+                <span>Explore the AI Customer Agent</span>
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+
+              <Link
+                href="/get-started"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/80 px-6 py-4 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-white whitespace-nowrap"
+              >
+                <span>Talk to us</span>
+              </Link>
             </div>
+
+            {/* Micro-trust proof row directly below CTAs */}
+            <p className="home-reveal home-delay-3 mt-4 flex flex-wrap items-center gap-x-2 text-xs text-ink/50">
+              <button
+                type="button"
+                onClick={openChat}
+                className="inline-flex items-center gap-1.5 font-medium text-emerald-800 hover:text-emerald-950 transition-colors"
+              >
+                <span className="size-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                <span>Try Mel Live ↗</span>
+              </button>
+              <span>·</span>
+              <span>Approved business knowledge</span>
+              <span>·</span>
+              <span>Zero repeated questions</span>
+              <span>·</span>
+              <span>Seamless team handoff</span>
+            </p>
+          </div>
+
+          {/* Product Surface Showcase Below */}
+          <div className="home-reveal home-delay-3 mt-14 md:mt-16">
+            <CustomerAgentSurface />
           </div>
         </div>
       </section>

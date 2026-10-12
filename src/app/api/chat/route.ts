@@ -32,6 +32,7 @@ const KNOWLEDGE_BASE = `
 - Delivery process: Understand, Define, Design, Build, Launch, Improve.
 - Website pages: /solutions, /solutions/ai-customer-agent, /solutions/custom-ai-systems, /products, /products/lekiray, /work, /about, /get-started.
 - Demonstrations on the site (clearly labeled demonstrations, not client deployments): a Real Estate AI Customer Agent and an Aviation Enquiry System.
+- Contact email for Meleph: info@melephtech.com.
 `;
 
 function buildSystemPrompt(lead: Lead) {

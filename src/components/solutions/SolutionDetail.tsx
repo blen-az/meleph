@@ -4,11 +4,103 @@ type SolutionDetailProps = { eyebrow: string; title: string; intro: string; outc
 
 export function SolutionDetail({ eyebrow, title, intro, outcomes, workflow }: SolutionDetailProps) {
   const customerAgent = eyebrow === "AI Customer Agent";
-  return <>
-    <section className="page-hero-grid relative overflow-hidden border-b border-ink/10 py-20 md:py-28"><div className="page-glow absolute inset-y-0 right-0 w-1/2" /><div className="container-site relative grid gap-14 lg:grid-cols-[.9fr_1.1fr] lg:items-center"><div><p className="eyebrow">{eyebrow}</p><h1 className="mt-7 max-w-4xl font-serif text-[clamp(3.5rem,6.4vw,6.5rem)] leading-[.9] tracking-[-.045em] text-ink">{title}</h1><p className="mt-8 max-w-xl text-base leading-8 text-ink/58">{intro}</p><Link href="/get-started" className="mt-8 inline-flex bg-ink px-6 py-4 text-sm text-ivory transition-transform hover:-translate-y-0.5">Discuss your process →</Link></div><EvidencePanel customerAgent={customerAgent} /></div></section>
-    <section className="relative overflow-hidden bg-ink py-20 text-ivory"><div className="absolute inset-0 technical-grid-dark opacity-30" /><div className="container-site relative"><div className="flex items-end justify-between border-b border-white/15 pb-7"><div><p className="text-[.6rem] uppercase tracking-[.2em] text-gold">How it moves</p><h2 className="mt-4 font-serif text-4xl">One connected workflow.</h2></div><span className="hidden font-mono text-[.5rem] text-white/25 md:block">SYSTEM / 01</span></div><div className="mt-8 grid md:grid-cols-3 lg:grid-cols-6">{workflow.map((step, index) => <div key={step} className="group relative min-h-44 border-l border-white/15 p-5 transition-colors hover:bg-white/[.04]"><span className="font-mono text-[.5rem] text-gold">0{index + 1}</span><p className="mt-14 font-serif text-2xl">{step}</p>{index < workflow.length - 1 ? <span className="absolute -right-2 top-1/2 z-10 hidden size-4 place-items-center bg-gold text-[.5rem] text-ink lg:grid">→</span> : null}</div>)}</div></div></section>
-    <section className="py-24 md:py-32"><div className="container-site"><div className="grid gap-8 border-b border-ink/15 pb-10 md:grid-cols-2"><h2 className="font-serif text-5xl tracking-[-.035em] text-ink">Built around the work.</h2><p className="max-w-lg text-sm leading-7 text-ink/55">The system is defined around the decisions, handoffs and information the business actually needs.</p></div><div className="grid md:grid-cols-2">{outcomes.map((item, index) => <article key={item.title} className="group relative min-h-72 overflow-hidden border-b border-r border-ink/10 p-7 transition-colors hover:bg-brand-stone/25"><span className="font-mono text-[.5rem] text-gold">0{index + 1}</span><div className="absolute right-7 top-7 size-10 border border-ink/10 transition-transform group-hover:rotate-45" /><h3 className="mt-16 font-serif text-3xl text-ink">{item.title}</h3><p className="mt-4 max-w-md text-sm leading-7 text-ink/52">{item.text}</p></article>)}</div></div></section>
-  </>;
+  return (
+    <>
+      <section className="page-hero-grid relative overflow-hidden border-b border-ink/10 py-20 md:py-28">
+        <div className="page-glow absolute inset-y-0 right-0 w-1/2" />
+        <div className="container-site relative grid gap-14 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+          <div className="text-left">
+            <p className="eyebrow">{eyebrow}</p>
+            <h1 className="mt-7 max-w-4xl font-serif text-[clamp(3.5rem,6.4vw,6.5rem)] leading-[.9] tracking-[-.045em] text-ink">
+              {title}
+            </h1>
+            <p className="mt-8 max-w-xl text-base leading-8 text-ink/65 md:text-xl">
+              {intro}
+            </p>
+
+            {/* CTAs */}
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <Link
+                href="/get-started?interest=custom-ai-systems"
+                className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-[#FAF8F3] shadow-md transition-all hover:-translate-y-0.5 hover:bg-ink/90 hover:shadow-lg"
+              >
+                <span>Discuss Your Project</span>
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+
+              <Link
+                href="/about#how-we-work"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-6 py-4 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-white"
+              >
+                <span>How We Deliver</span>
+              </Link>
+            </div>
+
+            {/* Micro-trust proof row */}
+            <p className="mt-4 flex flex-wrap items-center gap-x-2 text-xs text-ink/50">
+              <span>Tailored operational workflows</span>
+              <span>·</span>
+              <span>No off-the-shelf templates</span>
+              <span>·</span>
+              <span>Production-grade integrations</span>
+            </p>
+          </div>
+          <EvidencePanel customerAgent={customerAgent} />
+        </div>
+      </section>
+      <section className="relative overflow-hidden bg-ink py-20 text-ivory">
+        <div className="absolute inset-0 technical-grid-dark opacity-30" />
+        <div className="container-site relative">
+          <div className="flex items-end justify-between border-b border-white/15 pb-7">
+            <div>
+              <p className="text-[.6rem] uppercase tracking-[.2em] text-gold">How it moves</p>
+              <h2 className="mt-4 font-serif text-4xl">One connected workflow.</h2>
+            </div>
+            <span className="hidden font-mono text-[.5rem] text-white/25 md:block">SYSTEM / 01</span>
+          </div>
+          <div className="mt-8 grid md:grid-cols-3 lg:grid-cols-6">
+            {workflow.map((step, index) => (
+              <div
+                key={step}
+                className="group relative min-h-44 border-l border-white/15 p-5 transition-colors hover:bg-white/[.04]"
+              >
+                <span className="font-mono text-[.5rem] text-gold">0{index + 1}</span>
+                <p className="mt-14 font-serif text-2xl">{step}</p>
+                {index < workflow.length - 1 ? (
+                  <span className="absolute -right-2 top-1/2 z-10 hidden size-4 place-items-center bg-gold text-[.5rem] text-ink lg:grid">
+                    →
+                  </span>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="py-24 md:py-32">
+      <div className="container-site">
+        <div className="grid gap-8 border-b border-ink/15 pb-10 md:grid-cols-2">
+          <h2 className="font-serif text-5xl tracking-[-.035em] text-ink">Built around the work.</h2>
+          <p className="max-w-lg text-sm leading-7 text-ink/55">
+            The system is defined around the decisions, handoffs and information the business actually needs.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2">
+          {outcomes.map((item, index) => (
+            <article
+              key={item.title}
+              className="group relative min-h-72 overflow-hidden border-b border-r border-ink/10 p-7 transition-colors hover:bg-brand-stone/25"
+            >
+              <span className="font-mono text-[.5rem] text-gold">0{index + 1}</span>
+              <div className="absolute right-7 top-7 size-10 border border-ink/10 transition-transform group-hover:rotate-45" />
+              <h3 className="mt-16 font-serif text-3xl text-ink">{item.title}</h3>
+              <p className="mt-4 max-w-md text-sm leading-7 text-ink/52">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </>
+  );
 }
 
 function EvidencePanel({ customerAgent }: { customerAgent: boolean }) {

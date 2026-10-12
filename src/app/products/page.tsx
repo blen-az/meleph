@@ -13,16 +13,43 @@ export default function ProductsPage() {
   return (
     <div className="bg-[#FAF8F3] text-ink selection:bg-[#E8E1D6]">
       {/* ─── Hero ─────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-b border-ink/8 py-20 md:py-28">
+      <section className="relative overflow-hidden border-b border-ink/8 pb-20 pt-6 md:pb-28 md:pt-8">
         <div className="home-container">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl text-left">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold">OUR PRODUCTS</p>
             <h1 className="mt-4 font-serif text-[clamp(2.8rem,6vw,5.5rem)] font-normal leading-[0.98] tracking-[-0.04em] text-ink">
               Digital products built to solve real problems.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/65 md:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink/65 md:text-xl">
               Alongside client systems, Meleph develops and operates its own digital products. We
               focus on fragmented industries where structured software creates immediate efficiency.
+            </p>
+
+            {/* CTAs */}
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <Link
+                href="/products/lekiray"
+                className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-[#FAF8F3] shadow-md transition-all hover:-translate-y-0.5 hover:bg-ink/90 hover:shadow-lg"
+              >
+                <span>Explore LeKiray</span>
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+
+              <Link
+                href="/get-started?interest=digital-products"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-6 py-4 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-white"
+              >
+                <span>Discuss Digital Products</span>
+              </Link>
+            </div>
+
+            {/* Micro-trust proof row */}
+            <p className="mt-4 flex flex-wrap items-center gap-x-2 text-xs text-ink/50">
+              <span>Developed &amp; operated by Meleph</span>
+              <span>·</span>
+              <span>Independent transaction platforms</span>
+              <span>·</span>
+              <span>Engineered in-house</span>
             </p>
           </div>
         </div>

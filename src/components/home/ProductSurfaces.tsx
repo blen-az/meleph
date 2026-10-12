@@ -89,7 +89,7 @@ export function CustomerAgentSurface({ compact = false }: { compact?: boolean })
 /** 1. AI Agent Front-Facing Customer Experience with Live Reasoning */
 function AgentView({ compact }: { compact?: boolean }) {
   return (
-    <div className={`grid ${compact ? "md:grid-cols-[1fr]" : "lg:grid-cols-[1fr_300px]"}`}>
+    <div className={`grid ${compact ? "md:grid-cols-[1fr]" : "lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_360px]"}`}>
       <div className="flex flex-col justify-between p-6 sm:p-8">
         {/* Customer Header */}
         <div className="flex items-center justify-between border-b border-ink/8 pb-4">

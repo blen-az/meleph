@@ -219,12 +219,12 @@ export function AiCustomerAgentPage() {
   return (
     <div className="bg-[#FAF8F3] text-ink selection:bg-[#E8E1D6]">
       {/* ─── 1. Intercom-Caliber Hero ─────────────────────────────── */}
-      <section className="relative overflow-hidden border-b border-ink/8 pb-20 pt-16 md:pb-28 md:pt-24">
+      <section className="relative overflow-hidden border-b border-ink/8 pb-20 pt-6 md:pb-28 md:pt-8">
         {/* Subtle Warm Backdrop Lighting */}
         <div className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-b from-[#FAF4E6] to-transparent opacity-70 blur-3xl" />
 
         <div className="home-container relative">
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="max-w-4xl text-left">
             {/* Pill Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/80 px-4 py-1.5 shadow-xs backdrop-blur-sm">
               <span className="relative flex size-2">
@@ -246,17 +246,17 @@ export function AiCustomerAgentPage() {
             </h1>
 
             {/* Locked Support Copy from AGENTS.md */}
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-ink/65 md:text-xl">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink/65 md:text-xl">
               An AI Customer Agent built around your business, capable of answering customers,
               understanding what they need, capturing information and moving each conversation
               forward.
             </p>
 
-            {/* CTAs */}
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            {/* CTAs - Exactly 2 cleanly aligned buttons */}
+            <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link
                 href="/get-started?interest=ai-customer-agent"
-                className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-[#FAF8F3] shadow-md transition-all hover:-translate-y-0.5 hover:bg-ink/90 hover:shadow-lg"
+                className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-[#FAF8F3] shadow-md transition-all hover:-translate-y-0.5 hover:bg-ink/90 hover:shadow-lg whitespace-nowrap"
               >
                 <span>Request a Demo</span>
                 <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -264,41 +264,47 @@ export function AiCustomerAgentPage() {
 
               <a
                 href="#workflow"
-                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-6 py-4 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-white"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-6 py-4 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-white whitespace-nowrap"
               >
                 <span>See How It Works</span>
               </a>
+            </div>
 
-              {/* Direct Live Agent Launcher Button */}
+            {/* Micro-trust proof row directly below CTAs */}
+            <p className="mt-4 flex flex-wrap items-center gap-x-2 text-xs text-ink/50">
               <button
                 type="button"
                 onClick={openChat}
-                className="group inline-flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50/90 px-5 py-4 text-sm font-semibold text-emerald-900 transition-all hover:bg-emerald-100 hover:shadow-sm"
+                className="inline-flex items-center gap-1.5 font-medium text-emerald-800 hover:text-emerald-950 transition-colors"
               >
-                <span className="relative flex size-2">
-                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex size-2 rounded-full bg-emerald-600" />
-                </span>
-                <span>Try Mel Live</span>
-                <span className="text-emerald-700 transition-transform group-hover:translate-x-0.5">↗</span>
+                <span className="size-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                <span>Try Mel Live ↗</span>
               </button>
-            </div>
+              <span>·</span>
+              <span>Approved business knowledge</span>
+              <span>·</span>
+              <span>Zero repeated questions</span>
+              <span>·</span>
+              <span>Seamless context handoff</span>
+              <span>·</span>
+              <span>Built around your operations</span>
+            </p>
 
             {/* Live Software Proof Metrics Bar */}
-            <div className="mt-14 grid grid-cols-2 gap-4 border-t border-ink/8 pt-8 sm:grid-cols-4 sm:gap-8">
-              <div className="text-center">
+            <div className="mt-12 grid grid-cols-2 gap-4 border-t border-ink/8 pt-8 sm:grid-cols-4 sm:gap-8 text-left">
+              <div>
                 <p className="font-serif text-3xl font-semibold text-ink">99.4%</p>
                 <p className="mt-1 text-xs text-ink/50">Grounded Knowledge Match</p>
               </div>
-              <div className="text-center">
+              <div>
                 <p className="font-serif text-3xl font-semibold text-ink">&lt; 2.4s</p>
                 <p className="mt-1 text-xs text-ink/50">Average Time to Next Step</p>
               </div>
-              <div className="text-center">
+              <div>
                 <p className="font-serif text-3xl font-semibold text-ink">100%</p>
                 <p className="mt-1 text-xs text-ink/50">Handoff Context Preserved</p>
               </div>
-              <div className="text-center">
+              <div>
                 <p className="font-serif text-3xl font-semibold text-ink">4 Channels</p>
                 <p className="mt-1 text-xs text-ink/50">Web, WhatsApp, IG &amp; Email</p>
               </div>
