@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { openVoiceflowChat } from "@/components/layout/VoiceflowChat";
+import { openChat } from "@/components/layout/MelephChat";
 
 type SurfaceTab = "agent" | "inbox" | "workflow";
 
@@ -109,7 +109,7 @@ function AgentView({ compact }: { compact?: boolean }) {
           </div>
           <button
             type="button"
-            onClick={openVoiceflowChat}
+            onClick={openChat}
             className="group hidden items-center gap-1.5 rounded-full bg-ink px-3 py-1.5 text-xs font-medium text-white shadow-sm transition-all hover:bg-ink/90 sm:flex"
           >
             <span>Test Live</span>
@@ -167,7 +167,7 @@ function AgentView({ compact }: { compact?: boolean }) {
           <span className="text-xs text-ink/40">Type a question or click below to launch Mel...</span>
           <button
             type="button"
-            onClick={openVoiceflowChat}
+            onClick={openChat}
             className="flex items-center gap-1.5 rounded-lg bg-ink px-4 py-2 text-xs font-medium text-white transition-transform hover:-translate-y-0.5"
           >
             <span>Chat with Mel</span>

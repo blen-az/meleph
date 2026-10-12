@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { openVoiceflowChat } from "@/components/layout/VoiceflowChat";
+import { openChat } from "@/components/layout/MelephChat";
 
 const navigation = [
   { label: "Products", href: "/products" },
@@ -94,7 +94,7 @@ export function Navbar() {
           {/* Quick Chat Launcher Button */}
           <button
             type="button"
-            onClick={openVoiceflowChat}
+            onClick={openChat}
             className="text-xs font-semibold text-ink/60 hover:text-ink transition-colors"
           >
             Ask Mel
@@ -170,7 +170,7 @@ export function Navbar() {
             type="button"
             onClick={() => {
               setOpen(false);
-              openVoiceflowChat();
+              openChat();
             }}
             className="mt-3 flex w-full items-center justify-between rounded-xl border border-emerald-300 bg-emerald-50 px-5 py-3 text-sm font-semibold text-emerald-900"
           >

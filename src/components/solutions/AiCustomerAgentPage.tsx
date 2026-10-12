@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useTransition } from "react";
-import { openVoiceflowChat } from "@/components/layout/VoiceflowChat";
+import { openChat } from "@/components/layout/MelephChat";
 
 /* ─── Scenario Data for the Live Interactive Agent Demo ──── */
 type ScenarioKey = "enterprise" | "realestate" | "aviation";
@@ -272,7 +272,7 @@ export function AiCustomerAgentPage() {
               {/* Direct Live Agent Launcher Button */}
               <button
                 type="button"
-                onClick={openVoiceflowChat}
+                onClick={openChat}
                 className="group inline-flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50/90 px-5 py-4 text-sm font-semibold text-emerald-900 transition-all hover:bg-emerald-100 hover:shadow-sm"
               >
                 <span className="relative flex size-2">
@@ -440,7 +440,7 @@ export function AiCustomerAgentPage() {
 
                         <button
                           type="button"
-                          onClick={openVoiceflowChat}
+                          onClick={openChat}
                           className="group hidden items-center gap-1.5 rounded-full bg-ink px-3.5 py-1.5 text-xs font-medium text-[#FAF8F3] shadow-xs transition-all hover:bg-ink/90 sm:flex"
                         >
                           <span>Test in Real Widget</span>
@@ -514,7 +514,7 @@ export function AiCustomerAgentPage() {
                         </span>
                         <button
                           type="button"
-                          onClick={openVoiceflowChat}
+                          onClick={openChat}
                           className="flex items-center gap-1.5 rounded-lg bg-ink px-4 py-2 text-xs font-medium text-[#FAF8F3] transition-transform hover:-translate-y-0.5"
                         >
                           <span>Launch Live Mel</span>
@@ -1469,7 +1469,7 @@ export function AiCustomerAgentPage() {
 
               <button
                 type="button"
-                onClick={openVoiceflowChat}
+                onClick={openChat}
                 className="rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/20"
               >
                 Test Mel Assistant Live ↗

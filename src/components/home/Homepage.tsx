@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { CustomerAgentSurface, WorkflowSurface } from "@/components/home/ProductSurfaces";
-import { openVoiceflowChat } from "@/components/layout/VoiceflowChat";
+import { openChat } from "@/components/layout/MelephChat";
 
 const workflowSteps = [
   {
@@ -103,7 +103,7 @@ export function Homepage() {
                 {/* Direct Live Agent Launcher Pill */}
                 <button
                   type="button"
-                  onClick={openVoiceflowChat}
+                  onClick={openChat}
                   className="group flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50/80 px-4 py-2.5 text-xs font-semibold text-emerald-900 transition-all hover:bg-emerald-100"
                 >
                   <span className="relative flex size-2">
@@ -769,7 +769,7 @@ export function Homepage() {
               </Link>
               <button
                 type="button"
-                onClick={openVoiceflowChat}
+                onClick={openChat}
                 className="rounded-full border border-emerald-400/40 bg-emerald-950/40 px-6 py-3.5 text-sm font-semibold text-emerald-300 transition-colors hover:bg-emerald-900/60"
               >
                 Chat with Mel Now ↗

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { VoiceflowChat } from "@/components/layout/VoiceflowChat";
+import { MelephChat } from "@/components/layout/MelephChat";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -66,7 +66,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar />
         <main className="flex-1 pt-20">{children}</main>
         <Footer />
-        <VoiceflowChat />
+        <MelephChat />
       </body>
     </html>
   );
