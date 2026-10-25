@@ -1,71 +1,66 @@
-import type { Metadata } from "next";
-import { Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { MelephChat } from "@/components/layout/MelephChat";
+import type { Metadata, Viewport } from "next";
+import { Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { SiteHeader } from "@/components/site/site-header";
+import { SiteFooter } from "@/components/site/site-footer";
+import { MelephChat } from "@/components/site/meleph-chat";
+import { SITE } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const display = Instrument_Serif({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: "400",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const body = Instrument_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: {
-    default: "Meleph | AI Systems & Digital Products",
-    template: "%s | Meleph",
+    default: `${SITE.name} | ${SITE.descriptor}`,
+    template: `%s | ${SITE.name}`,
   },
-  description:
-    "We design and engineer intelligent systems that transform how businesses operate.",
-  keywords: [
-    "AI consulting",
-    "machine learning",
-    "digital products",
-    "AI development",
-    "data engineering",
-    "product design",
-  ],
+  description: SITE.description,
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    siteName: "Meleph",
-    title: "Meleph | AI Systems & Digital Products",
-    description:
-      "We design and engineer intelligent systems that transform how businesses operate.",
+    siteName: SITE.name,
+    title: `${SITE.name} | ${SITE.descriptor}`,
+    description: SITE.description,
   },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "32x32" },
     ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#faf8f3",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <Navbar />
-        <main className="flex-1 pt-20">{children}</main>
-        <Footer />
+    <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
+      <body className="flex min-h-full flex-col">
+        <a
+          href="#main"
+          className="sr-only z-[70] rounded-full bg-primary px-4 py-2 text-sm text-primary-foreground focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+        >
+          Skip to content
+        </a>
+        <SiteHeader />
+        <main id="main" className="flex-1">
+          {children}
+        </main>
+        <SiteFooter />
         <MelephChat />
       </body>
     </html>
