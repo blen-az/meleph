@@ -119,13 +119,31 @@ export function SiteHeader() {
             <nav aria-label="Mobile" className="flex flex-col px-6">
               <p className="pt-2 pb-1 text-sm text-muted-foreground">Solutions</p>
               {SOLUTIONS.map((solution) => (
-                <MobileLink key={solution.href} href={solution.href} onNavigate={() => setMenuOpen(false)}>
+                <MobileLink
+                  key={solution.href}
+                  href={solution.href}
+                  active={isActive(pathname, solution.href)}
+                  onNavigate={() => setMenuOpen(false)}
+                >
                   {solution.title}
                 </MobileLink>
               ))}
+              <Link
+                href="/solutions"
+                onClick={() => setMenuOpen(false)}
+                aria-current={pathname === "/solutions" ? "page" : undefined}
+                className="w-fit py-1.5 text-muted-foreground transition-colors hover:text-foreground aria-[current=page]:text-foreground"
+              >
+                Compare solutions
+              </Link>
               <Separator className="my-3" />
               {NAV.map((item) => (
-                <MobileLink key={item.href} href={item.href} onNavigate={() => setMenuOpen(false)}>
+                <MobileLink
+                  key={item.href}
+                  href={item.href}
+                  active={isActive(pathname, item.href)}
+                  onNavigate={() => setMenuOpen(false)}
+                >
                   {item.label}
                 </MobileLink>
               ))}
@@ -147,16 +165,24 @@ export function SiteHeader() {
 
 function MobileLink({
   href,
+  active,
   onNavigate,
   children,
 }: {
   href: string;
+  active: boolean;
   onNavigate: () => void;
   children: React.ReactNode;
 }) {
   return (
-    <Link href={href} onClick={onNavigate} className="py-2.5 font-serif text-[1.75rem] leading-tight">
+    <Link
+      href={href}
+      onClick={onNavigate}
+      aria-current={active ? "page" : undefined}
+      className="flex items-center gap-3 py-2.5 font-serif text-[1.75rem] leading-tight text-foreground/75 aria-[current=page]:text-foreground"
+    >
       {children}
+      {active ? <span aria-hidden="true" className="size-1.5 rounded-full bg-gold" /> : null}
     </Link>
   );
 }
