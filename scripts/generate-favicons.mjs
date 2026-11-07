@@ -3,15 +3,15 @@ import path from "node:path";
 import sharp from "sharp";
 
 // Meleph brand palette
-// Ink Navy: #0D1B2A
+// Black: #161616
 // Warm Ivory: #FAF8F3
 // Muted Gold: #C9A968
 
 const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
     <linearGradient id="melephBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0D1B2A" />
-      <stop offset="100%" stop-color="#060E17" />
+      <stop offset="0%" stop-color="#161616" />
+      <stop offset="100%" stop-color="#000000" />
     </linearGradient>
     <linearGradient id="goldDot" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#E8CE96" />

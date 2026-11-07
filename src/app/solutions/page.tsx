@@ -1,84 +1,105 @@
+import { AutomationRun } from "@/components/evidence/automation-run";
 import type { Metadata } from "next";
-import Link from "next/link";
+import { ClosingCta, PageHero, PrimaryCta, TextLink } from "@/components/site/section";
+import { ConversationExample } from "@/components/evidence/agent";
 
-export const metadata: Metadata = { title: "Solutions", description: "AI Customer Agent and Custom AI Systems from Meleph." };
-const solutions = [
-  { number: "01", title: "AI Customer Agent", href: "/solutions/ai-customer-agent", text: "A customer-facing system that understands enquiries, answers questions, captures context and connects each conversation to the right next step.", kind: "conversation" },
-  { number: "02", title: "Custom AI Systems", href: "/solutions/custom-ai-systems", text: "Purpose-built internal systems for workflows, knowledge, operations, portals and the connections between existing tools.", kind: "system" },
+export const metadata: Metadata = {
+  title: "Solutions",
+  description:
+    "From customer-facing AI to custom operational systems, Meleph designs technology around the problem, workflow and people it needs to support.",
+  alternates: { canonical: "/solutions" },
+};
+
+const SOLUTIONS = [
+  {
+    index: "Solution 1",
+    name: "AI Customer Agent",
+    title: "Turn customer conversations into business action.",
+    text: "An AI Customer Agent that answers questions, understands intent, captures opportunities and connects customers to your team and business processes.",
+    listLabel: "Capabilities",
+    list: [
+      "Customer conversations",
+      "Lead capture",
+      "Conversation inbox",
+      "Connected channels",
+      "Appointments",
+      "Quotations",
+      "Proactive messaging",
+      "Human handoff",
+      "Workflows",
+      "Reporting",
+    ],
+    cta: "Explore AI Customer Agent",
+    href: "/solutions/ai-customer-agent",
+    surface: "",
+  },
+  {
+    index: "Solution 2",
+    name: "Custom AI Systems",
+    title: "When your workflow does not fit a template.",
+    text: "We design and build AI-powered systems around your processes, information and business goals.",
+    listLabel: "Examples",
+    list: [
+      "Internal AI assistants",
+      "Knowledge systems",
+      "Workflow automation",
+      "Operational dashboards",
+      "Business portals",
+      "Data integrations",
+      "Employee tools",
+      "Customer portals",
+    ],
+    cta: "Explore Custom AI Systems",
+    href: "/solutions/custom-ai-systems",
+    surface: "surface-ink",
+  },
 ] as const;
 
 export default function SolutionsPage() {
   return (
     <>
-      <section className="page-hero-grid relative overflow-hidden border-b border-ink/10 pb-20 pt-6 md:pb-28 md:pt-8">
-        <div className="page-glow absolute inset-y-0 right-0 w-1/2" />
-        <div className="container-site relative">
-          <div className="max-w-4xl text-left">
-            <p className="eyebrow">SOLUTIONS</p>
-            <h1 className="mt-7 max-w-5xl font-serif text-[clamp(3.5rem,7vw,7rem)] leading-[.9] tracking-[-.045em] text-ink">
-              Systems built around how the business needs to work.
-            </h1>
-            <p className="mt-7 max-w-2xl text-base leading-relaxed text-ink/65 md:text-xl">
-              From customer-facing AI to custom operational systems, we design technology around
-              the problem, workflow and people it needs to support.
-            </p>
+      <PageHero
+        eyebrow="Solutions"
+        title="Systems built around how your business actually works."
+        lede="From customer-facing AI to custom operational systems, we design technology around the problem, workflow and people it needs to support."
+      />
 
-            {/* CTAs */}
-            <div className="mt-9 flex flex-wrap items-center gap-4">
-              <Link
-                href="/solutions/ai-customer-agent"
-                className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-[#FAF8F3] shadow-md transition-all hover:-translate-y-0.5 hover:bg-ink/90 hover:shadow-lg"
-              >
-                <span>Explore AI Customer Agent</span>
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-
-              <Link
-                href="/solutions/custom-ai-systems"
-                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-6 py-4 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-white"
-              >
-                <span>Explore Custom AI Systems</span>
-              </Link>
+      {SOLUTIONS.map((solution) => (
+        <section key={solution.href} className={`section-y border-t ${solution.surface}`}>
+          <div className="page-container grid gap-14 lg:grid-cols-12 lg:items-center">
+            <div className="flex flex-col gap-6 lg:col-span-5">
+              <p className="text-sm text-muted-foreground">
+                {solution.index} <span aria-hidden="true">/</span> {solution.name}
+              </p>
+              <h2 className="display-section">{solution.title}</h2>
+              <p className="lede">{solution.text}</p>
+              <div className="flex flex-col gap-3 border-t pt-6">
+                <h3 className="text-sm text-muted-foreground">{solution.listLabel}</h3>
+                <ul className="flex flex-wrap gap-x-5 gap-y-2">
+                  {solution.list.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="pt-2">
+                {solution.surface ? (
+                  <TextLink href={solution.href}>{solution.cta}</TextLink>
+                ) : (
+                  <PrimaryCta href={solution.href}>{solution.cta}</PrimaryCta>
+                )}
+              </div>
             </div>
-
-            {/* Micro-trust proof row */}
-            <p className="mt-4 flex flex-wrap items-center gap-x-2 text-xs text-ink/50">
-              <span>Engineered around your process</span>
-              <span>·</span>
-              <span>No chatbot templates</span>
-              <span>·</span>
-              <span>Contextual team handoffs</span>
-              <span>·</span>
-              <span>Scalable integrations</span>
-            </p>
+            <div className="lg:col-span-6 lg:col-start-7">
+              {solution.surface ? <AutomationRun /> : <ConversationExample />}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
-      <section className="container-site space-y-8 py-20 md:py-28">
-        {solutions.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="group grid min-h-[32rem] overflow-hidden border border-ink/12 transition-shadow hover:shadow-[0_25px_70px_rgba(13,27,42,.12)] lg:grid-cols-[.78fr_1.22fr]"
-          >
-            <div className="flex flex-col p-8 md:p-12">
-              <span className="font-mono text-[.55rem] text-gold">{item.number} / 02</span>
-              <h2 className="mt-20 font-serif text-5xl tracking-[-.03em] text-ink">{item.title}</h2>
-              <p className="mt-6 max-w-lg text-sm leading-7 text-ink/55">{item.text}</p>
-              <span className="mt-auto pt-12 text-sm transition-transform group-hover:translate-x-1">
-                Explore solution →
-              </span>
-            </div>
-            <SolutionCanvas kind={item.kind} />
-          </Link>
-        ))}
-      </section>
+      <ClosingCta
+        title="Not sure which one you need?"
+        lede="Tell us about the problem. We will help you work out whether it is a customer-facing system, an internal one, or both."
+      />
     </>
   );
-}
-
-function SolutionCanvas({ kind }: { kind: "conversation" | "system" }) {
-  if (kind === "conversation") return <div className="relative overflow-hidden bg-brand-stone/50 p-8"><div className="page-hero-grid absolute inset-0 opacity-50" /><div className="relative mx-auto mt-8 max-w-lg border border-ink/15 bg-ivory p-5 shadow-[0_25px_55px_rgba(13,27,42,.14)]"><div className="flex justify-between border-b border-ink/10 pb-4 text-[.48rem] uppercase tracking-wider text-ink/35"><span>Customer conversation</span><span className="text-[#568066]">Active</span></div><div className="mt-5 max-w-[78%] border border-ink/10 bg-white p-3 text-[.54rem] leading-5 text-ink/55">Can you help me understand which option would suit our team?</div><div className="ml-auto mt-3 max-w-[82%] bg-ink p-3 text-[.54rem] leading-5 text-white/70">Of course. I can capture a few details and connect you with the right person.</div><div className="mt-6 grid grid-cols-3 gap-2">{["Intent", "Context", "Next step"].map((label, i) => <div key={label} className="border border-ink/10 bg-white p-3"><p className="text-[.42rem] uppercase tracking-wider text-ink/30">{label}</p><p className="mt-4 font-serif text-lg text-ink">{["Clear", "Captured", "Ready"][i]}</p></div>)}</div></div></div>;
-  return <div className="relative overflow-hidden bg-ink p-8 text-white"><div className="technical-grid-dark absolute inset-0 opacity-30" /><div className="relative mt-8 grid grid-cols-2 gap-3"><div className="col-span-2 border border-white/10 p-5"><div className="flex justify-between text-[.48rem] uppercase tracking-wider text-white/30"><span>Connected workflow</span><span className="text-gold">Operating</span></div><div className="mt-7 flex items-center">{["Input", "Review", "Action", "Record"].map((item, i) => <div key={item} className="flex flex-1 items-center"><div><span className="grid size-7 place-items-center rounded-full border border-gold/40 text-[.48rem] text-gold">0{i+1}</span><p className="mt-2 text-[.46rem] text-white/40">{item}</p></div>{i < 3 ? <i className="mb-4 h-px flex-1 bg-white/15" /> : null}</div>)}</div></div>{["Knowledge", "Operations"].map((item) => <div key={item} className="min-h-40 border border-white/10 p-5"><p className="text-[.48rem] uppercase tracking-wider text-white/30">{item}</p><div className="mt-12 flex items-end gap-1">{[2,4,3,6,5].map((h, i) => <i key={i} className="flex-1 bg-gold/40" style={{height:`${h*7}px`}} />)}</div></div>)}</div></div>;
 }

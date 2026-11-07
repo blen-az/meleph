@@ -1,166 +1,58 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { LEKIRAY_URL } from "@/lib/site";
+import { Badge } from "@/components/ui/badge";
+import { PageHero, PrimaryCta, TextLink } from "@/components/site/section";
+import { LeKiraySearch } from "@/components/evidence/projects";
 
 export const metadata: Metadata = {
-  title: "Products | Digital Products Built by Meleph",
+  title: "Products",
   description:
     "Alongside client systems, Meleph develops and operates its own digital products, starting with LeKiray.",
+  alternates: { canonical: "/products" },
 };
-
-const LEKIRAY_URL = "https://le-kiray.vercel.app/";
 
 export default function ProductsPage() {
   return (
-    <div className="bg-[#FAF8F3] text-ink selection:bg-[#E8E1D6]">
-      {/* ─── Hero ─────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-b border-ink/8 pb-20 pt-6 md:pb-28 md:pt-8">
-        <div className="home-container">
-          <div className="max-w-4xl text-left">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold">OUR PRODUCTS</p>
-            <h1 className="mt-4 font-serif text-[clamp(2.8rem,6vw,5.5rem)] font-normal leading-[0.98] tracking-[-0.04em] text-ink">
-              Digital products built to solve real problems.
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink/65 md:text-xl">
-              Alongside client systems, Meleph develops and operates its own digital products. We
-              focus on fragmented industries where structured software creates immediate efficiency.
-            </p>
+    <>
+      <PageHero
+        eyebrow="Our products"
+        title="Digital products built to solve real problems."
+        lede="Alongside client systems, Meleph develops and operates its own digital products."
+      />
 
-            {/* CTAs */}
-            <div className="mt-9 flex flex-wrap items-center gap-4">
-              <Link
-                href="/products/lekiray"
-                className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-[#FAF8F3] shadow-md transition-all hover:-translate-y-0.5 hover:bg-ink/90 hover:shadow-lg"
-              >
-                <span>Explore LeKiray</span>
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-
-              <Link
-                href="/get-started?interest=digital-products"
-                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-6 py-4 text-sm font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-white"
-              >
-                <span>Discuss Digital Products</span>
-              </Link>
-            </div>
-
-            {/* Micro-trust proof row */}
-            <p className="mt-4 flex flex-wrap items-center gap-x-2 text-xs text-ink/50">
-              <span>Developed &amp; operated by Meleph</span>
-              <span>·</span>
-              <span>Independent transaction platforms</span>
-              <span>·</span>
-              <span>Engineered in-house</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Product Card: LeKiray ─────────────────────────────────── */}
-      <section className="py-20 md:py-28">
-        <div className="home-container">
-          <div className="overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-xl transition-all hover:shadow-2xl">
-            <div className="grid lg:grid-cols-12">
-              {/* Left Column: Product Definition */}
-              <div className="flex flex-col justify-between p-8 sm:p-14 lg:col-span-6">
-                <div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-semibold uppercase tracking-wider text-gold">
-                      PRODUCT 01
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-800">
-                      <span className="size-1.5 rounded-full bg-emerald-600 animate-pulse" />
-                      Live in Production
-                    </span>
-                  </div>
-
-                  <h2 className="mt-6 font-serif text-5xl font-semibold tracking-tight text-ink md:text-6xl">
-                    LeKiray
-                  </h2>
-
-                  <p className="mt-4 text-sm font-medium text-ink/70">
-                    Find what you need. Rent it without the unnecessary search.
-                  </p>
-
-                  <p className="mt-3 text-sm leading-relaxed text-ink/60">
-                    A digital marketplace connecting people and businesses with vehicles, machinery
-                    and industrial equipment available for rent.
-                  </p>
-
-                  {/* Capabilities / Categories */}
-                  <div className="mt-8 space-y-2.5">
-                    <div className="flex items-center gap-2 text-xs text-ink/75">
-                      <span className="text-gold font-bold">✓</span>
-                      <span>Heavy Excavators, Wheel Loaders &amp; Compaction</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-ink/75">
-                      <span className="text-gold font-bold">✓</span>
-                      <span>Mobile Cranes &amp; Commercial Tipper Fleets</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-ink/75">
-                      <span className="text-gold font-bold">✓</span>
-                      <span>Direct Provider Inquiries &amp; Operator Inclusion Terms</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-12 flex flex-wrap items-center gap-4">
-                  <a
-                    href={LEKIRAY_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-[#FAF8F3] hover:bg-ink/90 transition-transform hover:-translate-y-0.5"
-                  >
-                    <span>Launch le-kiray.vercel.app</span>
-                    <span className="ml-1.5 inline-block transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                      ↗
-                    </span>
-                  </a>
-
-                  <Link
-                    href="/products/lekiray"
-                    className="rounded-full border border-ink/15 bg-white px-5 py-3.5 text-sm font-semibold text-ink hover:border-ink/30 transition-colors"
-                  >
-                    Explore Product Overview →
-                  </Link>
-                </div>
+      <section className="pb-24 md:pb-32">
+        <div className="page-container">
+          <article className="surface-stone grid overflow-hidden rounded-3xl lg:grid-cols-12">
+            <div className="flex flex-col gap-6 p-8 sm:p-12 lg:col-span-5 lg:p-14">
+              <div className="flex flex-wrap items-center gap-3">
+                <Badge>MELEPH PRODUCT</Badge>
+                <span className="text-sm text-muted-foreground">Equipment rental marketplace</span>
               </div>
-
-              {/* Right Column: High-Impact Visual Frame */}
-              <div className="relative min-h-[380px] overflow-hidden bg-ink p-8 sm:p-12 lg:col-span-6 flex flex-col justify-between text-white">
-                <div className="flex items-center justify-between font-mono text-xs text-white/40">
-                  <span>UNIFIED HEAVY MARKETPLACE</span>
-                  <a
-                    href={LEKIRAY_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-emerald-400 hover:text-emerald-300 transition-colors"
-                  >
-                    le-kiray.vercel.app ↗
-                  </a>
-                </div>
-
-                <div className="my-auto text-center py-8">
-                  <span className="font-serif text-[12rem] font-bold leading-none text-white/5 select-none block">
-                    L
-                  </span>
-                  <p className="-mt-20 font-serif text-3xl font-semibold text-gold">
-                    Heavy Machinery &amp; Vehicle Rentals
-                  </p>
-                  <p className="mt-2 text-xs text-white/50 max-w-sm mx-auto">
-                    Search by category, review technical specs, and connect directly with verified
-                    plant owners.
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-between border-t border-white/10 pt-4 text-xs text-white/50">
-                  <span>Operated by Meleph</span>
-                  <span>Independent Product Line</span>
-                </div>
+              <h2 className="font-serif text-6xl leading-none md:text-7xl">LeKiray</h2>
+              <p className="lede">
+                Find what you need. Rent it without the unnecessary search. LeKiray connects customers
+                looking for vehicles, machinery and industrial equipment with providers offering them for
+                rent.
+              </p>
+              <div className="mt-auto flex flex-wrap items-center gap-5 pt-4">
+                <PrimaryCta href="/products/lekiray">Explore LeKiray</PrimaryCta>
+                <TextLink href={LEKIRAY_URL} external>
+                  Visit the product
+                </TextLink>
               </div>
             </div>
-          </div>
+            <div className="flex items-center p-6 sm:p-10 lg:col-span-7">
+              <div className="w-full overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 shadow-[0_30px_60px_-36px_rgb(0_0_0/0.45)]">
+                <LeKiraySearch rows={3} className="p-6" />
+              </div>
+            </div>
+          </article>
+          <p className="mt-6 max-w-[64ch] text-sm text-muted-foreground">
+            LeKiray is owned and operated by Meleph. It is separate from the AI Customer Agent and is not
+            part of client solution packages. More products will be listed here as they launch.
+          </p>
         </div>
       </section>
-    </div>
+    </>
   );
 }
